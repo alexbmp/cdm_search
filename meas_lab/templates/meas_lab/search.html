@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="jumbotron vertical-center jumbotron-meas-lab">
+    <h1>Measurement lab</h1>
+    <p>Search란에 용어ID, 용어명 등의 검색어를 입력해주세요.</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Source ID</th>
+        <th scope="col">Source Name</th>
+        <th scope="col">Target Name</th>
+        <th scope="col">Target ID</th>
+        <th scope="col">Domain</th>
+        <th scope="col">Vocabulary</th>
+        <th scope="col">Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for code in codes %}
+        <tr>
+          <td>{{ code.source_id }}</td>
+          <td>{{ code.source_name }}</td>
+          <td>{{ code.target_name }}</td>
+          <td>{{ code.target_id }}</td>
+          <td>{{ code.domain }}</td>
+          <td>{{ code.vocabulary }}</td>
+          <td>{{ code.review }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

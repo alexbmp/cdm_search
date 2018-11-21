@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="jumbotron vertical-center">
+    <h1>Hello World!</h1>
+    <p>CDM 용어 탐색을 지원합니다.<br>CDM 용어 그룹 중 하나를 선택해주세요.</p>
+  </div>
+<!--
+  {% for division in divisions %}
+  <div>
+    {% if division.app_name == "meas_lab" %}
+      <a href="{% url 'meas_lab:search_form' %}">{{ division }}</a>
+    {% elif division.app_name != "meas_lab" %}
+      <a href="{% url 'meas_lab:search_form' %}">{{ division }}</a>
+    {% endif %}
+  </div>
+  {% endfor %}
+-->
+{% endblock %}
