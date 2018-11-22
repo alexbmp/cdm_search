@@ -1,11 +1,14 @@
 from index.models import Code, Division
 
-selected = filter(lambda x: x.name.startswith("Measurement lab"), 
-    Division.objects.all())
+#selected = filter(lambda x: x.name.startswith("Measurement lab"), Division.objects.all())
+#selected = filter(lambda x: x.name.startswith("Drug"), Division.objects.all())
+selected = filter(lambda x: x.name.startswith("Measurement lab"), Division.objects.all())
 division = next(selected)
 print(division.name)
 
-for line in open("index/measurement.txt", "r"):
+#for line in open("index/measurement.txt", "r"):
+#for line in open("index/drug.txt", "r"):
+for line in open("index/nuclear_medicine.txt", "r"):
     field = line.rstrip().split('\t')
     (source_id, source_name, target_id, target_name,
      vocab, domain, spec, target_concept, comment,
@@ -23,3 +26,4 @@ for line in open("index/measurement.txt", "r"):
                 review=comment,
                )
     code.save()
+    #print(code)

@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-  <div class="jumbotron vertical-center jumbotron-meas-lab">
+  <div class="jumbotron vertical-center jumbotron-drug">
     <div class="jumbotron-text">
-      <h1>Measurement lab</h1>
+      <h1>Drug</h1>
       <p>Search란에 용어ID, 용어명 등의 검색어를 입력해주세요.</p>
     </div>
   </div>
@@ -13,7 +14,7 @@
       <input class="form-control mr-sm-2" type="search" value="{{ request.GET.q }}" name="q" placeholder="예시: MTX 혹은 Syringe">
       <button class="btn btn-success" type="submit">Search</button>
   </form>
-  
+
   <table class="table table-striped">
     <thead>
       <tr>

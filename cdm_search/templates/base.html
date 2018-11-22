@@ -40,12 +40,12 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              용어 그룹
+              매핑 테이블
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{% url 'meas_lab:search_form' %}">Measurement lab</a>
               <a class="dropdown-item" href="#">Measurement vital</a>
-              <a class="dropdown-item" href="#">Drug</a>
+              <a class="dropdown-item" href="{% url 'drug:search_form' %}">Drug</a>
               <a class="dropdown-item" href="#">Specimen</a>
               <!--<div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>-->

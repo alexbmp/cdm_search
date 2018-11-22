@@ -27,19 +27,28 @@
 
 .page-header > h2 > a,
 .page-header > h2 > a:focus,
-.page-header > h2 > a:hover { color: #007bff; font-size: 28px; text-decoration: none; }
+.page-header > h2 > a:hover { font-weight: bold; color: #007bff; font-size: 28px; text-decoration: none; }
 
 .jumbotron {
     background-image: url('/static/images/main.jpg');
     background-size: cover;
-    height: 250px;
+    height: 700px;
     color: white;
     font-weight: bold;
     text-align: center;
     background-position: center; 
 }
+.jumbotron .jumbotron-text {
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+}
+.jumbotron .jumbotron-text > h1 { font-size: 60px; }
+.jumbotron .jumbotron-text > p { font-size: 20px; margin-bottom: 0px; }
 
-.jumbotron-meas-lab { color: blue; background-image: url('/static/images/meas-lab.png'); }
+
+.jumbotron-meas-lab { height: 230px; color: blue; background-image: url('/static/images/meas-lab.png'); }
+.jumbotron-drug { height: 230px; color: blue; background-image: url('/static/images/drug.jpg'); }
 
 .jumbotron > h1 { font-size: 60px; }
 .jumbotron > p { font-size: 20px; margin-bottom: 0px; }

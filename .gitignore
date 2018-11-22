@@ -1,3 +1,6 @@
 db.sqlite3
 *.pyc
 __pycache__
+measurement.txt
+drug.txt
+nuclear_medicine.txt
