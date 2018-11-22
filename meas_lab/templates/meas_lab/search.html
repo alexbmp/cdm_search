@@ -10,27 +10,49 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Source ID</th>
-        <th scope="col">Source Name</th>
-        <th scope="col">Target Name</th>
-        <th scope="col">Target ID</th>
+        <th scope="col">SNUH 코드</th>
+        <th scope="col">SNUH 코드명</th>
+        <th scope="col">CDM 코드명</th>
+        <th scope="col">CDM 코드</th>
         <th scope="col">Domain</th>
         <th scope="col">Vocabulary</th>
         <th scope="col">Review</th>
       </tr>
     </thead>
     <tbody>
-      {% for code in codes %}
-        <tr>
-          <td>{{ code.source_id }}</td>
-          <td>{{ code.source_name }}</td>
-          <td>{{ code.target_name }}</td>
-          <td>{{ code.target_id }}</td>
-          <td>{{ code.domain }}</td>
-          <td>{{ code.vocabulary }}</td>
-          <td>{{ code.review }}</td>
-        </tr>
-      {% endfor %}
+      {% if message %}
+      <th class="search-message" colspan="7">{{ message }}</th>
+      {% else %}
+        {% for code in codes.object_list %}
+          <tr>
+            <td>{{ code.source_id }}</td>
+            <td>{{ code.source_name }}</td>
+            <td>{{ code.target_name }}</td>
+            <td>{{ code.target_id }}</td>
+            <td>{{ code.domain }}</td>
+            <td>{{ code.vocabulary }}</td>
+            <td>{{ code.review }}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </tbody>
   </table>
+
+  <div class="pagination">
+    <span class="step-links">
+      {% if codes.has_previous %}
+        <a href="?page=1&q={{ q }}">&laquo; first</a>
+        <a href="?page={{ codes.previous_page_number }}&q={{ q }}">previous</a>
+      {% endif %}
+
+      <span class="current">
+        Page {{ codes.number }} of {{ codes.paginator.num_pages }}.
+      </span>
+
+      {% if codes.has_next %}
+        <a href="?page={{ codes.next_page_number }}&q={{ q }}">next</a>
+        <a href="?page={{ codes.paginator.num_pages }}&q={{ q }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
 {% endblock %}

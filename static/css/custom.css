@@ -25,7 +25,9 @@
 
 .page-header > h2 > a > img { margin-bottom: 8px; margin-right: 10px; }
 
-.page-header > h2 > a { font-size: 28px; }
+.page-header > h2 > a,
+.page-header > h2 > a:focus,
+.page-header > h2 > a:hover { color: #007bff; font-size: 28px; text-decoration: none; }
 
 .jumbotron {
     background-image: url('/static/images/main.jpg');
@@ -45,3 +47,5 @@
 .form-control { width: 200px; }
 
 .navbar-nav > li { margin-left: 10px; margin-right: 10px; }
+
+/*.search-message { colspan }*/
