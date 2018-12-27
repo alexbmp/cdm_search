@@ -9,8 +9,8 @@
     </div>
   </div>
 
-  <form class="form-inline" action="{% url 'drug:search' %}" method="GET">
-      <input class="form-control mr-sm-2" type="search" value="{{ request.GET.q }}" name="q" placeholder="예시: MTX 혹은 Syringe">
+  <form class="form-inline" action="{% url 'meas_lab:search' %}" method="GET">
+      <input class="form-control mr-sm-2" type="search" value="{{ request.GET.q }}" name="q" placeholder="예시: L200 혹은 White">
       <button class="btn btn-success" type="submit">Search</button>
   </form>
   
